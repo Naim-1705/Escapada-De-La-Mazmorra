@@ -1,10 +1,23 @@
 # depslib dependency file v1.0
-1783976181 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\main.cpp
+1784235443 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\main.cpp
 	<iostream>
 	"Jugador.h"
 	"Monstruo.h"
+	"combate.h"
 
 1783976807 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.h
 
-1783976804 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
+1784235083 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
+	<cstring>
+
+1784235325 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.cpp
+	<iostream>
+	<cstring>
+	"combate.h"
+	"Jugador.h"
+	"Monstruo.h"
+
+1784234994 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.h
+	"Jugador.h"
+	"Monstruo.h"
 
