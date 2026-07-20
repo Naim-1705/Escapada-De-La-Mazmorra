@@ -12,8 +12,7 @@ int vidaJug;
 bool turnoJug = true;
 int opc;
 
-void pelea(int sala){
-    Jugador jug;
+void pelea(int sala,Jugador &jug){
     Monstruo mos;
     switch(sala){
     case 1:
@@ -40,10 +39,17 @@ void pelea(int sala){
         system("pause");
         enfrentamiento(mos,jug);
     break;
+    case 4:
+        cout << "JUGADOR:" << endl;
+        cout << "Vida: " << jug.get_vida() << endl;
+        cout << "Damage de Espada: " << jug.get_espada() << endl;
+        cout << "Damage de Arco: " << jug.get_arco() << endl;
+        system("pause");
+        break;
     }
 }
 
-void enfrentamiento(Monstruo mos,Jugador obj){
+void enfrentamiento(Monstruo &mos,Jugador &obj){
     while(mos.get_vida() > 0 && obj.get_vida() > 0){
         system("cls");
         cout << "JUGADOR: " << endl;

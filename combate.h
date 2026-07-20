@@ -3,7 +3,7 @@
 #include "Jugador.h"
 #include "Monstruo.h"
 
-void enfrentamiento(Monstruo mos,Jugador obj);
-void pelea(int sala);
+void enfrentamiento(Monstruo &mos,Jugador &obj);
+void pelea(int sala, Jugador &jug);
 
 #endif // COMBATE_H_INCLUDED
