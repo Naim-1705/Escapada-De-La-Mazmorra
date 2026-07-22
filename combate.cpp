@@ -11,6 +11,8 @@ int vidaMos;
 int vidaJug;
 bool turnoJug = true;
 int opc;
+void cargarMonstruo();
+void dardeBajaMonstruo();
 
 void pelea(int sala,Jugador &jug){
     Monstruo mos;
@@ -113,6 +115,61 @@ void enfrentamiento(Monstruo &mos,Jugador &obj){
             }
             turnoJug = true;
             system("pause");
+        }
+    }
+}
+
+void admin(){
+    int opc;
+    bool seguir = true;
+    while(seguir){
+        cout << "-----MENU DE ADMINISTRACION-----" << endl;
+        cout << "1- Cargar" << endl;
+        cout << "2- Dar de baja" << endl;
+        cout << "0- Salir" << endl;
+
+        cout << "Ingrese una opcion: ";
+        cin >> opc;
+        cout << endl;
+
+        switch(opc){
+            case 1: cargarMonstruo();
+            break;
+            case 2: dardeBajaMonstruo();
+            break;
+            case 0: seguir = false;
+            break;
+        }
+    }
+}
+
+void cargarMonstruo(){
+    ArchivoMonstruo archi;
+    if(archi.agregarMonstruo() == -1){
+        cout << "Error de memoria" << endl;
+    }
+    if(archi.agregarMonstruo() == -2){
+        cout << "No se pudo cargar la memoria" << endl;
+    }
+    if(archi.agregarMonstruo > 0){
+        cout << "Cargado con exito" << endl;
+    }
+}
+
+void dardeBajaMonstruo(){
+    ArchivoMonstruo archi;
+    Monstruo mons;
+    char nombre[20];
+    int contador = archi.cantidadMonstruo();
+
+    cout << "Indique el nombre del Monstruo a dar de Baja: ";
+    cin >> nombre;
+    cout << endl;
+
+    for(int i = 0; i < contador; i++){
+        mons = archi.leerMonstruo(i);
+        if(strcmp(mons.get_nombre(),nombre)==1){
+
         }
     }
 }
