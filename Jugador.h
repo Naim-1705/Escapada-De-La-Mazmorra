@@ -4,14 +4,17 @@
 class Jugador{
 private:
     int vida;
-    int arco;
-    int espada;
+    int damage;
+    int armadura;
+    int dinero;
+
 public:
     ///CONSTRUCTOR
-    Jugador(int v = 100, int a = 15, int e = 30){
+    Jugador(int v = 100, int d = 7, int a = 5, int m = 0){
         vida = v;
-        arco = a;
-        espada = e;
+        damage = d;
+        armadura = a;
+        dinero = m;
     }
 
     ///SETTERS
@@ -20,17 +23,25 @@ public:
             vida = _vida;
         }
     }
-    void set_arco(int _arco){
-        arco = arco + _arco;
+    void set_damage(int _damage){
+        if(_damage >= 0){
+            damage = _damage;
+        }
     }
-    void set_espada(int _espada){
-        espada = espada + _espada;
+    void set_armadura(int _armadura){
+        if(_armadura >= 0){
+            armadura = _armadura;
+        }
+    }
+    void set_dinero(int _dinero){
+        dinero = _dinero;
     }
 
     ///GETTERS
     int get_vida(){return vida;}
-    int get_arco(){return arco;}
-    int get_espada(){return espada;}
+    int get_damage(){return damage;}
+    int get_armadura(){return armadura;}
+    int get_dinero(){return dinero;}
 };
 
 #endif // JUGADOR_H_INCLUDED

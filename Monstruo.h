@@ -49,6 +49,8 @@ public:
     char* get_nombre(){return nombre;}
     bool get_estado(){return estado;}
 
+    ///CARGAR
+
     bool cargar(){
         Monstruo mon;
         ArchivoMonstruo archi;

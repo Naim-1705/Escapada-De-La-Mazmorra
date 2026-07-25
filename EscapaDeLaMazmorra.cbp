@@ -32,8 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Espada.h" />
 		<Unit filename="Jugador.h" />
 		<Unit filename="Monstruo.h" />
+		<Unit filename="archivoEspada.cpp" />
+		<Unit filename="archivoEspada.h" />
 		<Unit filename="archivoMonstruo.cpp" />
 		<Unit filename="archivoMonstruo.h" />
 		<Unit filename="combate.cpp" />
