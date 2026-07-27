@@ -12,73 +12,34 @@ private:
 
 public:
     ///CONSTRUCTOR
-    Espada(char n[30] = " ", int d = 0, int du = 0){
+    Espada(const char n[30] = " ", int d = 0, int du = 0, bool e = true){
         strcpy(nombre,n);
         damage = d;
         durabilidad = du;
+        estado = e;
     }
 
     ///SETTERS
-    void set_nombre(const char* _nombre){
-        strcpy(nombre,_nombre);
-    }
-    void set_damage(int _damage){
-        if(_damage >= 0){
-            damage = _damage;
-        }
-    }
-    void set_durabilidad(int _durabilidad){
-        if(_durabilidad >= 0){
-            durabilidad = _durabilidad;
-        }
-    }
+    void set_nombre(const char* _nombre);
+
+    void set_damage(int _damage);
+
+    void set_durabilidad(int _durabilidad);
+
+    void set_estado(bool _estado);
 
     ///GETTERS
     char* get_nombre(){return nombre;}
     int get_damage(){return damage;}
     int get_durabilidad(){return durabilidad;}
+    bool get_estado(){return  estado;}
 
     ///CARGAR
-    /*
-    bool cargar(){
-        Espada armor;
-        ArchivoEspada archi;
+    bool cargar();
 
-        int contador = archi.cantidadEspada();
+    ///MOSTRAR
 
-        cout << "Ingrese el nombre de la Espada: ";
-        cin.getline(nombre);
-        cout << endl;
-
-        for(int i = 0; i < contador; i++){
-            if(strcmp(armor.get_nombre(),nombre)==0 && armor.get_estado()){
-                cout << "Esta Espada ya existe" << endl;
-                return false;
-            }
-        }
-
-        cout << "Ingrese el Damage de la Espada: ";
-        cin >> damage;
-        cout << endl;
-        while(damage < 0){
-            cout << "El Damage no es valido! Ingrese otro valor valido: ";
-            cin  >> damage;
-            cout << endl;
-        }
-
-        cout << "Ingrese la Durabilidad de la Espada: ";
-        cin >> durabilidad;
-        cout << endl;
-        while(durabilidad < 0){
-            cout << "Este Damage no es valido! Ingrese otro valor valido: ";
-            cin  >> ataque;
-            cout << endl;
-        }
-
-        estado = true;
-        return true;
-    }
-    */
+    void mostrar();
 };
 
 #endif // ESPADA_H_INCLUDED

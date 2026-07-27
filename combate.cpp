@@ -1,3 +1,5 @@
+
+/*
 #include <iostream>
 #include <cstring>
 
@@ -6,6 +8,8 @@ using namespace std;
 #include "combate.h"
 #include "Jugador.h"
 #include "Monstruo.h"
+#include "archivoEspada.h"
+#include "archivoMonstruo.h"
 
 int vidaMos;
 int vidaJug;
@@ -151,7 +155,7 @@ void cargarMonstruo(){
     if(archi.agregarMonstruo() == -2){
         cout << "No se pudo cargar la memoria" << endl;
     }
-    if(archi.agregarMonstruo > 0){
+    if(archi.agregarMonstruo() > 0){
         cout << "Cargado con exito" << endl;
     }
 }
@@ -173,3 +177,4 @@ void dardeBajaMonstruo(){
         }
     }
 }
+*/

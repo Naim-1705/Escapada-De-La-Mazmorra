@@ -28,18 +28,18 @@ int ArchivoMonstruo::agregarMonstruo(){
     return registro;
 }
 
-bool ArchivoMonstruo::bajaLogica(int id){
+bool ArchivoMonstruo::bajaLogica(const char* nombre){
     Monstruo reg;
-    int pos = buscarPosicion(id);
+    int pos = buscarPosicion(nombre);
     if(pos == -1)return false;
 
-    reg = leerRegistro(pos);
+    reg = leerMonstruo(pos);
 
-    if(reg.getEstado()==false){
+    if(reg.get_estado() == false){
         return false;
     }
     else{
-        reg.setEstado(false);
+        reg.set_estado(false);
         return modificarMonstruo(reg,pos);
     }
 }
@@ -59,10 +59,11 @@ int ArchivoMonstruo::modificarMonstruo(Monstruo reg,int pos){
     return escribio;
 }
 
-int ArchivoMonstruo::buscarPosicion(int id){
+int ArchivoMonstruo::buscarPosicion(const char* nombre){
     Monstruo reg;
-    int pos=0;
     FILE *pMon;
+
+    int cantidad = cantidadMonstruo();
 
     pMon = fopen(nombre,"rb");
 
@@ -70,12 +71,12 @@ int ArchivoMonstruo::buscarPosicion(int id){
         return -1;
     }
 
-    while(fread(&reg,tamanioRegistro,1,pMon)==1){
-        if(reg.getId()==id){
+    for(int i = 0; i < cantidad; i++){
+        reg = leerMonstruo(i);
+        if(strcmp(reg.get_nombre(),nombre) == 0){
             fclose(pMon);
-            return pos;
+            return i;
         }
-        pos++;
     }
     fclose(pMon);
     return -2;
@@ -84,8 +85,7 @@ int ArchivoMonstruo::buscarPosicion(int id){
 Monstruo ArchivoMonstruo::leerMonstruo(int pos){
     Monstruo reg;
     FILE *pMon;
-    reg.set_id(-1);
-
+    reg.set_nombre(" ");
     pMon = fopen(nombre,"rb");
 
     if(pMon == nullptr){

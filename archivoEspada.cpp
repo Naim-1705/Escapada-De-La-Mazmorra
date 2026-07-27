@@ -14,6 +14,7 @@ int ArchivoEspada::agregarEspada(){
     pEsp = fopen(nombre,"ab");
 
     if(pEsp == nullptr){
+        cout << "Error en memoria" << endl;
         return -1;
     }
 
@@ -28,18 +29,18 @@ int ArchivoEspada::agregarEspada(){
     return registro;
 }
 
-bool ArchivoEspada::bajaLogica(char* nom){
+bool ArchivoEspada::bajaLogica(const char* nom){
     Espada reg;
-    int pos = buscarPosicion(&nom);
+    int pos = buscarPosicion(nom);
     if(pos == -1)return false;
 
-    reg = leerRegistro(pos);
+    reg = leerEspada(pos);
 
-    if(reg.getEstado()==false){
+    if(reg.get_estado()==false){
         return false;
     }
     else{
-        reg.setEstado(false);
+        reg.set_estado(false);
         return modificarEspada(reg,pos);
     }
 }
@@ -59,7 +60,8 @@ int ArchivoEspada::modificarEspada(Espada reg,int pos){
     return escribio;
 }
 
-int ArchivoEspada::buscarPosicion(char* nom){
+int ArchivoEspada::buscarPosicion(const char* nom){
+    ArchivoEspada archi;
     Espada reg;
     FILE *pEsp;
 
@@ -73,100 +75,99 @@ int ArchivoEspada::buscarPosicion(char* nom){
 
     for(int i = 0; i < contador; i++){
         reg = leerEspada(i);
-        if(strcmp(reg.get_nombre(),nom) == 1){
-            fclose(pMon);
+        if(strcmp(reg.get_nombre(),nom) == 0){
+            fclose(pEsp);
             return i;
         }
     }
-    fclose(pMon);
+    fclose(pEsp);
     return -2;
 }
 
 Espada ArchivoEspada::leerEspada(int pos){
     Espada reg;
     FILE *pEsp;
-    reg.set_id(-1);
+    reg.set_nombre(" ");
 
-    pMon = fopen(nombre,"rb");
+    pEsp = fopen(nombre,"rb");
 
-    if(pMon == nullptr){
+    if(pEsp == nullptr){
         return reg;
     }
 
-    fseek(pMon,pos * tamanioRegistro,0);
-    fread(&reg,tamanioRegistro,1,pMon);
+    fseek(pEsp,pos * tamanioRegistro,0);
+    fread(&reg,tamanioRegistro,1,pEsp);
 
-    fclose(pMon);
+    fclose(pEsp);
     return reg;
 }
 
-int ArchivoMonstruo::cantidadMonstruo(){
-    Monstruo reg;
-    FILE *pMon;
+int ArchivoEspada::cantidadEspada(){
+    FILE *pEsp;
 
-    pMon = fopen(nombre,"rb");
+    pEsp = fopen(nombre,"rb");
 
-    if(pMon == nullptr){
+    if(pEsp == nullptr){
         return -1;
     }
 
-    fseek(pMon,0,2);
-    int tam = ftell(pMon);
-    fclose(pMon);
+    fseek(pEsp,0,2);
+    int tam = ftell(pEsp);
+    fclose(pEsp);
 
     int cantReg;
     cantReg = tam / tamanioRegistro;
     return cantReg;
 }
 
-bool ArchivoMonstruo::copiaSeguridad(){
-    Monstruo reg;
+bool ArchivoEspada::copiaSeguridad(){
+     Espada reg;
 
-     FILE *pMo;
-     FILE *pMon;
+     FILE *pEs;
+     FILE *pEsp;
 
-     pMo = fopen("copiaMonstruos.dat","wb");
-     pMon = fopen(nombre,"rb");
+     pEs = fopen("copiaEspadas.dat","wb");
+     pEsp = fopen(nombre,"rb");
 
-     if(pMo == nullptr || pMon == nullptr){
-        fclose(pMon);
-        fclose(pMo);
+     if(pEs == nullptr || pEsp == nullptr){
+        fclose(pEsp);
+        fclose(pEs);
         cout << "Error en memoria" << endl;
         return false;
      }
 
-     while(fread(&reg,tamanioRegistro,1,pMon)==1){
-        fwrite(&reg,tamanioRegistro,1,pMo);
+     while(fread(&reg,tamanioRegistro,1,pEsp)==1){
+        fwrite(&reg,tamanioRegistro,1,pEs);
      }
 
-     fclose(pMon);
-     fclose(pMo);
+     fclose(pEsp);
+     fclose(pEs);
 
      return true;
 }
 
-bool ArchivoMonstruo::reestablecer(){
-    Monstruo reg;
+bool ArchivoEspada::reestablecer(){
+     Espada reg;
 
-     FILE *pMo;
-     FILE *pMon;
+     FILE *pEs;
+     FILE *pEsp;
 
-     pMo = fopen("copiaMonstruos.dat","rb");
-     pMon = fopen(nombre,"wb");
+     pEs = fopen("copiaEspadas.dat","rb");
+     pEsp = fopen(nombre,"wb");
 
-     if(pMo == nullptr || pMon == nullptr){
-        fclose(pMon);
-        fclose(pMo);
+     if(pEs == nullptr || pEsp == nullptr){
+        fclose(pEsp);
+        fclose(pEs);
         cout << "Error en memoria" << endl;
         return false;
      }
 
-    while(fread(&reg,tamanioRegistro,1,pMo)==1){
-        fwrite(&reg,tamanioRegistro,1,pMon);
+    while(fread(&reg,tamanioRegistro,1,pEs)==1){
+        fwrite(&reg,tamanioRegistro,1,pEsp);
      }
 
-     fclose(pMon);
-     fclose(pMo);
+     fclose(pEsp);
+     fclose(pEs);
 
      return true;
 }

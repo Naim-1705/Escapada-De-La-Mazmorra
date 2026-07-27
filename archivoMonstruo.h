@@ -13,9 +13,9 @@ class ArchivoMonstruo{
         tamanioRegistro = sizeof(Monstruo);
     }
     int agregarMonstruo();
-    bool bajaLogica(char *nombre);
+    bool bajaLogica(const char* nombre);
     int modificarMonstruo(Monstruo reg,int pos);
-    int buscarPosicion(int id);
+    int buscarPosicion(const char* nombre);
     Monstruo leerMonstruo(int pos);
     int cantidadMonstruo();
     bool copiaSeguridad();

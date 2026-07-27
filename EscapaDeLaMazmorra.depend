@@ -1,22 +1,95 @@
 # depslib dependency file v1.0
-1784571864 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\main.cpp
+1785167856 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\main.cpp
 	<iostream>
 	"Jugador.h"
-	"combate.h"
+	"opciones.h"
 
-1783976807 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.h
+1785008730 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.h
 
-1784235083 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
+1785168321 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
 	<cstring>
 
-1784571822 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.cpp
+1785170931 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.cpp
 	<iostream>
 	<cstring>
 	"combate.h"
 	"Jugador.h"
 	"Monstruo.h"
+	"archivoEspada.h"
+	"archivoMonstruo.h"
 
-1784571829 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.h
+1784658515 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.h
 	"Jugador.h"
 	"Monstruo.h"
+
+1785166716 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivoespada.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	"archivoEspada.h"
+
+1785165724 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivoespada.h
+	"Espada.h"
+	"string.h"
+
+1785168354 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\espada.h
+	<cstring>
+
+1785176081 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.h
+
+1785170958 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivomonstruo.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	"archivoMonstruo.h"
+
+1785167473 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivomonstruo.h
+	"Monstruo.h"
+	"string.h"
+
+1785168221 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\espada.cpp
+	<iostream>
+	<cstring>
+	"Espada.h"
+	"archivoEspada.h"
+
+1785168324 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.cpp
+	<iostream>
+	<cstring>
+	"archivoMonstruo.h"
+	"Monstruo.h"
+
+1785176929 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.cpp
+	<iostream>
+	"funcionesEspada.h"
+	"archivoEspada.h"
+	"archivoArmadura.h"
+	"Espada.h"
+	"Armadura.h"
+
+1785176402 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.h
+
+1785176734 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.cpp
+	<iostream>
+	"opciones.h"
+	"funcionesEspada.h"
+
+1785177062 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivoarmadura.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	"archivoArmadura.h"
+
+1785176747 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivoarmadura.h
+	"Armadura.h"
+	"string.h"
+
+1785174534 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\armadura.h
+	<cstring>
+
+1785177201 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\armadura.cpp
+	<iostream>
+	<cstring>
+	"Armadura.h"
+	"archivoArmadura.h"
 

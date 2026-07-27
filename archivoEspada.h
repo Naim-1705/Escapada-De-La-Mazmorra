@@ -16,10 +16,10 @@ class ArchivoEspada{
         tamanioRegistro = sizeof(Espada);
     }
     int agregarEspada();
-    bool bajaLogica(char *nom);
+    bool bajaLogica(const char* nom);
     int modificarEspada(Espada reg,int pos);
-    int buscarPosicion(char* nom);
-    Monstruo leerEspada(int pos);
+    int buscarPosicion(const char* nom);
+    Espada leerEspada(int pos);
     int cantidadEspada();
     bool copiaSeguridad();
     bool reestablecer();

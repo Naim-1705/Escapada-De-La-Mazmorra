@@ -3,7 +3,8 @@
 using namespace std;
 
 #include "Jugador.h"
-#include "combate.h"
+#include "opciones.h"
+///#include "combate.h"
 
 int main()
 {
@@ -17,28 +18,28 @@ int main()
         cout << "2- Oeste" << endl;
         cout << "3- Norte" << endl;
         cout << "4- Estadisticas" << endl;
-        cout << "5- Agregar monstruo" << endl;
+        cout << "5- Opciones" << endl;
         cin >> opc;
         cout << endl;
 
         switch(opc){
             case 1: cout << "Caminando hacia el Este..." << endl;
-                pelea(1,jug);
+                ///pelea(1,jug);
                 break;
             case 2:
                 cout << "Caminando hacia el Oeste..." << endl;
-                pelea(2,jug);
+                ///pelea(2,jug);
                 break;
             case 3:
                 cout << "Caminando hacia el Norte..." << endl;
-                pelea(3,jug);
+                ///pelea(3,jug);
                 break;
             case 4:
                 cout << "Estadisticas de jugador" << endl;
-                pelea(4,jug);
+                ///pelea(4,jug);
                 break;
             case 5:
-
+                menuOpciones();
                 break;
             default:
                 cout << "No es valida esta opcion. Intente de nuevo" << endl;

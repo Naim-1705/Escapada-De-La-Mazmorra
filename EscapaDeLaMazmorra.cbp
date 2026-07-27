@@ -32,16 +32,26 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Armadura.cpp" />
+		<Unit filename="Armadura.h" />
+		<Unit filename="Espada.cpp" />
 		<Unit filename="Espada.h" />
 		<Unit filename="Jugador.h" />
+		<Unit filename="Monstruo.cpp" />
 		<Unit filename="Monstruo.h" />
+		<Unit filename="archivoArmadura.cpp" />
+		<Unit filename="archivoArmadura.h" />
 		<Unit filename="archivoEspada.cpp" />
 		<Unit filename="archivoEspada.h" />
 		<Unit filename="archivoMonstruo.cpp" />
 		<Unit filename="archivoMonstruo.h" />
 		<Unit filename="combate.cpp" />
 		<Unit filename="combate.h" />
+		<Unit filename="funcionesEspada.cpp" />
+		<Unit filename="funcionesEspada.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="opciones.cpp" />
+		<Unit filename="opciones.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
