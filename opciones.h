@@ -4,5 +4,7 @@
 void menuOpciones();
 void menuEspada();
 void menuArmadura();
+void menuHabilidad();
+void menuJugador();
 
 #endif // OPCIONES_H_INCLUDED

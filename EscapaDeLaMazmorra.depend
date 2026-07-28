@@ -4,7 +4,11 @@
 	"Jugador.h"
 	"opciones.h"
 
-1785008730 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.h
+1785253636 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.h
+	<cstring>
+	"Espada.h"
+	"Armadura.h"
+	"Habilidad.h"
 
 1785168321 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
 	<cstring>
@@ -35,7 +39,7 @@
 1785168354 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\espada.h
 	<cstring>
 
-1785176081 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.h
+1785252402 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.h
 
 1785170958 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivomonstruo.cpp
 	<iostream>
@@ -59,17 +63,21 @@
 	"archivoMonstruo.h"
 	"Monstruo.h"
 
-1785176929 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.cpp
+1785253533 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.cpp
 	<iostream>
 	"funcionesEspada.h"
 	"archivoEspada.h"
 	"archivoArmadura.h"
+	"archivoHabilidad.h"
+	"archivoJugador.h"
 	"Espada.h"
 	"Armadura.h"
+	"Habilidad.h"
+	"Jugador.h"
 
-1785176402 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.h
+1785252561 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.h
 
-1785176734 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.cpp
+1785253612 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.cpp
 	<iostream>
 	"opciones.h"
 	"funcionesEspada.h"
@@ -87,9 +95,43 @@
 1785174534 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\armadura.h
 	<cstring>
 
-1785177201 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\armadura.cpp
+1785249013 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\armadura.cpp
 	<iostream>
 	<cstring>
 	"Armadura.h"
 	"archivoArmadura.h"
+
+1785246009 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\habilidad.cpp
+	<iostream>
+	<cstring>
+	"Habilidad.h"
+	"archivoHabilidad.h"
+
+1785245891 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\habilidad.h
+	<cstring>
+
+1785245955 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivohabilidad.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	"archivoHabilidad.h"
+
+1785245320 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivohabilidad.h
+	"Habilidad.h"
+	"string.h"
+
+1785254244 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivojugador.cpp
+	<iostream>
+	<cstring>
+	<ctime>
+	"archivoJugador.h"
+
+1785250783 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivojugador.h
+	"Jugador.h"
+	"string.h"
+
+1785252003 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.cpp
+	<iostream>
+	<cstring>
+	"Jugador.h"
 

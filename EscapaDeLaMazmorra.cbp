@@ -36,6 +36,9 @@
 		<Unit filename="Armadura.h" />
 		<Unit filename="Espada.cpp" />
 		<Unit filename="Espada.h" />
+		<Unit filename="Habilidad.cpp" />
+		<Unit filename="Habilidad.h" />
+		<Unit filename="Jugador.cpp" />
 		<Unit filename="Jugador.h" />
 		<Unit filename="Monstruo.cpp" />
 		<Unit filename="Monstruo.h" />
@@ -43,6 +46,10 @@
 		<Unit filename="archivoArmadura.h" />
 		<Unit filename="archivoEspada.cpp" />
 		<Unit filename="archivoEspada.h" />
+		<Unit filename="archivoHabilidad.cpp" />
+		<Unit filename="archivoHabilidad.h" />
+		<Unit filename="archivoJugador.cpp" />
+		<Unit filename="archivoJugador.h" />
 		<Unit filename="archivoMonstruo.cpp" />
 		<Unit filename="archivoMonstruo.h" />
 		<Unit filename="combate.cpp" />

@@ -1,8 +1,8 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
-#include <cstring>
 #include "Armadura.h"
 #include "archivoArmadura.h"
 

@@ -129,6 +129,131 @@ void menuArmadura(){
     }
 }
 
+void menuHabilidad(){
+    bool seguir = true;
+    int opc;
+
+    while(seguir){
+        system("cls");
+        cout << "---MENU DE HABILIDADES---" << endl;
+        cout << "1- Agregar una habilidad" << endl;
+        cout << "2- Modificar una habilidad" << endl;
+        cout << "3- Eliminar una habilidad" << endl;
+        cout << "4- Mostrar todas las habilidades" << endl;
+        cout << "0- Salir al menu de opciones" << endl;
+
+        cout << "Elije una opcion: ";
+        cin >> opc;
+        cout << endl;
+
+        switch(opc){
+        case 1:
+            if(agregarHabilidad()){
+                cout << "El registro se cargo con exito" << endl;
+            }
+            else{
+                cout << "No se pudo cargar el registro" << endl;
+            }
+            break;
+        case 2:
+            if(modificarHabilidad()){
+                cout << "Se modifico el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo modificar el registro" << endl;
+            }
+            break;
+        case 3:
+            if(eliminarHabilidad()){
+                cout << "Se elimino el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo eliminar el registro" << endl;
+            }
+            break;
+        case 4:
+            if(mostrarHabilidad()){
+                cout << "Se mostraron los registros con exito" << endl;
+            }
+            else{
+                cout << "No se pudo mostrar los registros" << endl;
+            }
+            break;
+        case 0:
+            cout << "Saliendo del menu de habilidades..." << endl;
+            seguir = false;
+            break;
+        default:
+            cout << "La opcion ingresada es invalida. Ingrese un valor valido" << endl;
+            break;
+        }
+        system("pause");
+    }
+}
+
+void menuJugador(){
+    bool seguir = true;
+    int opc;
+
+    while(seguir){
+        system("cls");
+        cout << "---MENU DEL JUGADOR---" << endl;
+        cout << "1- Agregar un jugador" << endl;
+        cout << "2- Modificar un jugador" << endl;
+        ///cout << "3- Eliminar una habilidad" << endl;
+        cout << "3- Mostrar todas las habilidades" << endl;
+        cout << "0- Salir al menu de opciones" << endl;
+
+        cout << "Elije una opcion: ";
+        cin >> opc;
+        cout << endl;
+
+        switch(opc){
+        case 1:
+            if(agregarJugador()){
+                cout << "El registro se cargo con exito" << endl;
+            }
+            else{
+                cout << "No se pudo cargar el registro" << endl;
+            }
+            break;
+        case 2:
+            if(modificarJugador()){
+                cout << "Se modifico el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo modificar el registro" << endl;
+            }
+            break;
+            /*
+        case 3:
+            if(eliminarHabilidad()){
+                cout << "Se elimino el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo eliminar el registro" << endl;
+            }
+            break;*/
+        case 3:
+            if(mostrarJugador()){
+                cout << "Se mostraron los registros con exito" << endl;
+            }
+            else{
+                cout << "No se pudo mostrar los registros" << endl;
+            }
+            break;
+        case 0:
+            cout << "Saliendo del menu de los jugadores..." << endl;
+            seguir = false;
+            break;
+        default:
+            cout << "La opcion ingresada es invalida. Ingrese un valor valido" << endl;
+            break;
+        }
+        system("pause");
+    }
+}
+
 void menuOpciones(){
     bool sigue = true;
     int opc;
@@ -137,6 +262,8 @@ void menuOpciones(){
         cout << "---MENU DE OPCIONES---" << endl;
         cout << "1- Menu de Espadas" << endl;
         cout << "2- Menu de Armaduras" << endl;
+        cout << "3- Menu de Habilidades" << endl;
+        cout << "4- Menu de Jugadores" << endl;
         cout << "0- Salir a menu principal" << endl;
 
         cout << "Ingrese una opcion:";
@@ -154,6 +281,12 @@ void menuOpciones(){
             break;
         case 2:
             menuArmadura();
+            break;
+        case 3:
+            menuHabilidad();
+            break;
+        case 4:
+            menuJugador();
             break;
         default:
             cout << "Esta opcion no es valida. Ingrese un valor valido!" << endl;
