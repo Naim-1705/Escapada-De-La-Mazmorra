@@ -3,7 +3,13 @@
 
 using namespace std;
 
+#include "archivoEspada.h"
+#include "archivoArmadura.h"
+#include "archivoHabilidad.h"
 #include "Jugador.h"
+#include "Espada.h"
+#include "Armadura.h"
+#include "Habilidad.h"
 
 ///SETTERS
 void Jugador::set_nombre(const char* _nombre){
@@ -42,6 +48,15 @@ void Jugador::set_ability(Habilidad _ability){
 
 ///CARGAR
 bool Jugador::cargar(){
+    char nombreObj[30];
+    int lugar;
+    ArchivoEspada archi;
+    Espada reg;
+    ArchivoArmadura archiArm;
+    Armadura regArm;
+    ArchivoHabilidad archiHab;
+    Habilidad regHab;
+
     cout << "Ingrese el nombre del Jugador: ";
     cin >> nombre;
     cout << endl;
@@ -70,24 +85,50 @@ bool Jugador::cargar(){
         return false;
     }
 
-    cout << "Cargue la espada: " << endl;
-    if(!sword.cargar()){
-        cout << "No se pudo cargar la espada" << endl;
+
+
+    cout << "Ingrese el nombre de la Espada: " << endl;
+    cin >>nombreObj;
+    cout << endl;
+    lugar = archi.buscarPosicion(nombreObj);
+    if(lugar < 0){
+        cout << "No se encontro la espada buscada" << endl;
         return false;
     }
-    cout << endl;
+    else{
+        reg = archi.leerEspada(lugar);
+        sword = reg;
+        cout << "Se registro la espada" << endl;
+    }
 
-    cout << "Cargue la Armadura: " << endl;
-    if(!armor.cargar()){
-        cout << "No se pudo cargar la armadura" << endl;
+
+
+    cout << "Ingrese el nombre de la Armadura: " << endl;
+    cin >>nombreObj;
+    cout << endl;
+    lugar = archiArm.buscarPosicion(nombreObj);
+    if(lugar < 0){
+        cout << "No se encontro la Armadura buscada" << endl;
         return false;
     }
-    cout << endl;
+    else{
+        regArm = archiArm.leerArmadura(lugar);
+        armor = regArm;
+        cout << "Se registro la Armadura" << endl;
+    }
 
-    cout << "Cargue l Habilidad 1: " << endl;
-    if(!ability.cargar()){
-        cout << "No se pudo cargar la Habilidad" << endl;
+    cout << "Ingrese el nombre de la Habilidad 1: " << endl;
+    cin >>nombreObj;
+    cout << endl;
+    lugar = archiHab.buscarPosicion(nombreObj);
+    if(lugar < 0){
+        cout << "No se encontro la Habilidad buscada" << endl;
         return false;
+    }
+    else{
+        regHab = archiHab.leerHabilidad(lugar);
+        ability = regHab;
+        cout << "Se registro la Habilidad" << endl;
     }
     return true;
 }

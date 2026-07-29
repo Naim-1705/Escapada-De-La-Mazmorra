@@ -10,8 +10,9 @@
 	"Armadura.h"
 	"Habilidad.h"
 
-1785168321 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
+1785347965 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.h
 	<cstring>
+	"Habilidad.h"
 
 1785170931 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\combate.cpp
 	<iostream>
@@ -39,7 +40,7 @@
 1785168354 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\espada.h
 	<cstring>
 
-1785252402 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.h
+1785348633 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.h
 
 1785170958 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\archivomonstruo.cpp
 	<iostream>
@@ -57,27 +58,31 @@
 	"Espada.h"
 	"archivoEspada.h"
 
-1785168324 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.cpp
+1785349088 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\monstruo.cpp
 	<iostream>
 	<cstring>
+	"archivoHabilidad.h"
 	"archivoMonstruo.h"
 	"Monstruo.h"
+	"Habilidad.h"
 
-1785253533 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.cpp
+1785349178 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.cpp
 	<iostream>
 	"funcionesEspada.h"
 	"archivoEspada.h"
 	"archivoArmadura.h"
 	"archivoHabilidad.h"
 	"archivoJugador.h"
+	"archivoMonstruo.h"
 	"Espada.h"
 	"Armadura.h"
 	"Habilidad.h"
 	"Jugador.h"
+	"Monstruo.h"
 
-1785252561 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.h
+1785347502 c:\users\joaco\desktop\programacion 2\escapadelamazmorra\funcionesespada.h
 
-1785253612 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.cpp
+1785348804 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\opciones.cpp
 	<iostream>
 	"opciones.h"
 	"funcionesEspada.h"
@@ -130,8 +135,14 @@
 	"Jugador.h"
 	"string.h"
 
-1785252003 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.cpp
+1785345731 source:c:\users\joaco\desktop\programacion 2\escapadelamazmorra\jugador.cpp
 	<iostream>
 	<cstring>
+	"archivoEspada.h"
+	"archivoArmadura.h"
+	"archivoHabilidad.h"
 	"Jugador.h"
+	"Espada.h"
+	"Armadura.h"
+	"Habilidad.h"
 

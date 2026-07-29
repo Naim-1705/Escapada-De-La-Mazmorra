@@ -254,6 +254,69 @@ void menuJugador(){
     }
 }
 
+///MENU DE MONSTRUOS
+void menuMonstruo(){
+    bool seguir = true;
+    int opc;
+
+    while(seguir){
+        system("cls");
+        cout << "---MENU DE MONSTRUOS---" << endl;
+        cout << "1- Agregar un monstruo" << endl;
+        cout << "2- Modificar un monstruo" << endl;
+        cout << "3- Eliminar un monstruo" << endl;
+        cout << "4- Mostrar todos los monstruos" << endl;
+        cout << "0- Salir al menu de opciones" << endl;
+
+        cout << "Elije una opcion: ";
+        cin >> opc;
+        cout << endl;
+
+        switch(opc){
+        case 1:
+            if(agregarMonstruo()){
+                cout << "El registro se cargo con exito" << endl;
+            }
+            else{
+                cout << "No se pudo cargar el registro" << endl;
+            }
+            break;
+        case 2:
+            if(modificarMonstruo()){
+                cout << "Se modifico el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo modificar el registro" << endl;
+            }
+            break;
+        case 3:
+            if(eliminarMonstruo()){
+                cout << "Se elimino el registro con exito" << endl;
+            }
+            else{
+                cout << "No se pudo eliminar el registro" << endl;
+            }
+            break;
+        case 4:
+            if(mostrarMonstruo()){
+                cout << "Se mostraron los registros con exito" << endl;
+            }
+            else{
+                cout << "No se pudo mostrar los registros" << endl;
+            }
+            break;
+        case 0:
+            cout << "Saliendo del menu de monstruos..." << endl;
+            seguir = false;
+            break;
+        default:
+            cout << "La opcion ingresada es invalida. Ingrese un valor valido" << endl;
+            break;
+        }
+        system("pause");
+    }
+}
+
 void menuOpciones(){
     bool sigue = true;
     int opc;
@@ -264,6 +327,7 @@ void menuOpciones(){
         cout << "2- Menu de Armaduras" << endl;
         cout << "3- Menu de Habilidades" << endl;
         cout << "4- Menu de Jugadores" << endl;
+        cout << "5- Menu de Monstruos" << endl,
         cout << "0- Salir a menu principal" << endl;
 
         cout << "Ingrese una opcion:";
@@ -287,6 +351,9 @@ void menuOpciones(){
             break;
         case 4:
             menuJugador();
+            break;
+        case 5:
+            menuMonstruo();
             break;
         default:
             cout << "Esta opcion no es valida. Ingrese un valor valido!" << endl;

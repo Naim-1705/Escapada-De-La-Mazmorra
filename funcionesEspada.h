@@ -25,4 +25,10 @@ bool modificarJugador();
 ///bool eliminarHabilidad();
 bool mostrarJugador();
 
+///PARA MONSTRUOS
+bool agregarMonstruo();
+bool modificarMonstruo();
+bool eliminarMonstruo();
+bool mostrarMonstruo();
+
 #endif // FUNCIONESESPADA_H_INCLUDED

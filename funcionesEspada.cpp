@@ -7,10 +7,12 @@ using namespace std;
 #include "archivoArmadura.h"
 #include "archivoHabilidad.h"
 #include "archivoJugador.h"
+#include "archivoMonstruo.h"
 #include "Espada.h"
 #include "Armadura.h"
 #include "Habilidad.h"
 #include "Jugador.h"
+#include "Monstruo.h"
 
 ArchivoEspada archi;
 Espada reg;
@@ -20,6 +22,8 @@ ArchivoHabilidad archiHab;
 Habilidad regHab;
 ArchivoJugador archiJug;
 Jugador regJug;
+ArchivoMonstruo archiMon;
+Monstruo regMon;
 
 
 ///FUNCIONES DE ESPADAS
@@ -385,10 +389,12 @@ bool agregarJugador(){
 
 bool modificarJugador(){
     char nombre[30];
-    int opc,valor;
+    char nombreObj[30];
+    int opc,valor,lugar;
 
     cout << "Ingrese el nombre del Jugador a modificar: ";
     cin >> nombre;
+    cout << endl;
 
     int pos = archiJug.buscarPosicion(nombre);
     if(pos < 0){
@@ -435,30 +441,46 @@ bool modificarJugador(){
         regJug.set_dinero(valor);
         break;
     case 5:
-        cout << "Ingrese las especificaciones de la espada: " << endl;
-        if(reg.cargar()){
-            regJug.set_sword(reg);
+        cout << "Ingrese el nombre de la Espada: " << endl;
+        cin >>nombreObj;
+        cout << endl;
+        lugar = archi.buscarPosicion(nombreObj);
+        if(lugar < 0){
+            cout << "No se encontro la espada buscada" << endl;
         }
         else{
-            return false;
+            reg = archi.leerEspada(lugar);
+            regJug.set_sword(reg);
+            cout << "Se registro la espada" << endl;
         }
+
         break;
     case 6:
-        cout << "Ingrese las especificaciones de la armadura: " << endl;
-        if(regArm.cargar()){
-            regJug.set_armor(regArm);
+        cout << "Ingrese el nombre de la Armadura: " << endl;
+        cin >>nombreObj;
+        cout << endl;
+        lugar = archiArm.buscarPosicion(nombreObj);
+        if(lugar < 0){
+            cout << "No se encontro la Armadura buscada" << endl;
         }
         else{
-            return false;
+            regArm = archiArm.leerArmadura(lugar);
+            regJug.set_armor(regArm);
+            cout << "Se registro la Armadura" << endl;
         }
         break;
     case 7:
-        cout << "Ingrese las especificaciones de la habilidad 1: " << endl;
-        if(regHab.cargar()){
-            regJug.set_ability(regHab);
+        cout << "Ingrese el nombre de la Habilidad 1: " << endl;
+        cin >>nombreObj;
+        cout << endl;
+        lugar = archiHab.buscarPosicion(nombreObj);
+        if(lugar < 0){
+            cout << "No se encontro la Habilidad buscada" << endl;
         }
         else{
-            return false;
+            regHab = archiHab.leerHabilidad(lugar);
+            regJug.set_ability(regHab);
+            cout << "Se registro la Habilidad" << endl;
         }
         break;
     default:
@@ -507,6 +529,136 @@ bool mostrarJugador(){
         regJug.mostrar();
         cout << endl;
         acumulador++;
+    }
+    return true;
+}
+
+///FUNCIONES DE MONSTRUOS
+bool agregarMonstruo(){
+    int valor;
+    valor = archiMon.agregarMonstruo();
+
+    if(valor < 0){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+
+bool modificarMonstruo(){
+    char nombre[30];
+    int opc,valor,lugar;
+    char nomHab[30];
+
+    cout << "Ingrese el nombre del Monstruo a modificar: ";
+    cin >> nombre;
+
+    int pos = archiMon.buscarPosicion(nombre);
+    if(pos < 0){
+        return false;
+    }
+
+    regMon = archiMon.leerMonstruo(pos);
+
+    cout << "Que aspecto desea modificar?" << endl;
+    cout << "1- Nombre" << endl;
+    cout << "2- Damage" << endl;
+    cout << "3- Armadura" << endl;
+    cout << "4- Habilidad 1" << endl;
+    cout << "5- Estado" << endl;
+
+    cout << "Ingrese una opcion: ";
+    cin >> opc;
+
+    switch(opc){
+    case 1:
+        cout << "Ingrese un nuevo nombre: ";
+        cin >> nombre;
+        cout << endl;
+        regMon.set_nombre(nombre);
+        break;
+    case 2:
+        cout << "Ingrese un nuevo damage: ";
+        cin >> valor;
+        cout << endl;
+        regMon.set_ataque(valor);
+        break;
+    case 3:
+        cout << "Ingrese la nueva armadura: ";
+        cin >> valor;
+        cout << endl;
+        regMon.set_armadura(valor);
+        break;
+    case 4:
+        cout << "Ingrese el nombre de la Habilidad: ";
+        cin >> nomHab;
+        cout << endl;
+        lugar = archiHab.buscarPosicion(nomHab);
+        if(lugar < 0){
+            cout << "No se encontro la habilidad " << endl;
+        }
+        else{
+            regHab = archiHab.leerHabilidad(lugar);
+            regMon.set_habilidad(regHab);
+        }
+    case 5:
+        cout << "Ingrese un nuevo estado(1-Activo / 0-Inactivo): ";
+        cin >> valor;
+        while(valor > 1 || valor < 0){
+            cout << "Este valor no es valido, ingrese uno nuevo: ";
+            cin >> valor;
+            cout << endl;
+        }
+        if(valor == 1){
+            regMon.set_estado(true);
+        }
+        if(valor == 0){
+            regMon.set_estado(false);
+        }
+    }
+
+    bool modifico = archiMon.modificarMonstruo(regMon,pos);
+
+    return modifico;
+
+}
+
+bool eliminarMonstruo(){
+    char nombre[30];
+
+    int cantidad = archiMon.cantidadMonstruo();
+
+    cout << "Ingrese el nombre del Monstruo: ";
+    cin >> nombre;
+
+    for(int i = 0; i < cantidad; i++){
+        regMon = archiMon.leerMonstruo(i);
+        if(strcmp(regMon.get_nombre(),nombre) == 0){
+            archiMon.bajaLogica(nombre);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool mostrarMonstruo(){
+    int cantidad = archiMon.cantidadMonstruo();
+    int acumulador = 1;
+
+    if(cantidad == 0){
+        cout << "No hay registros que mostrar" << endl;
+        return false;
+    }
+
+    for(int i = 0; i < cantidad; i++){
+        regMon = archiMon.leerMonstruo(i);
+        if(regMon.get_estado()){
+            cout << "MONSTRUO N°" << acumulador << ": " << endl;
+            regMon.mostrar();
+            cout << endl;
+            acumulador++;
+        }
     }
     return true;
 }

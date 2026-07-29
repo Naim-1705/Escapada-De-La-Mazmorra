@@ -5,6 +5,7 @@ void menuOpciones();
 void menuEspada();
 void menuArmadura();
 void menuHabilidad();
+void menuMonstruo();
 void menuJugador();
 
 #endif // OPCIONES_H_INCLUDED
