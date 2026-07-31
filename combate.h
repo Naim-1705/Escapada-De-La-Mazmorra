@@ -5,6 +5,5 @@
 
 void enfrentamiento(Monstruo &mos,Jugador &obj);
 void pelea(int sala, Jugador &jug);
-void admin();
 
 #endif // COMBATE_H_INCLUDED
